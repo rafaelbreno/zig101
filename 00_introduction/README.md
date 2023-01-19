@@ -73,6 +73,7 @@ pub fn main() !void {
 - > $ zig run hello_world.zig
 - The output should be:
     - _Hello, world!_
+- You can learn more about it running: `$ zig help`
 
 ### Explanation
 
