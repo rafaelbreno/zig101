@@ -9,6 +9,7 @@
 3. [Environment Setup](#environment-setup)
     - [Linux](#linux)
         - [ASDF](#asdf)
+4. [Hello World](#hello-world)
 
 ## What is Zig101
 Zig101 is my documented journey studying the [Zig Language](https://ziglang.org/) as if I was explaining to someone.
@@ -47,3 +48,39 @@ Incrementally improve your C/C++/Zig codebase.
     - Install Zig's latest version
 - > $ asdf global zig latest
     - Link Zig's latest version to the whole OS
+
+## Hello World
+Let's write a simple _"Hello World"_ program and try to understand what's happening there:
+
+```zig
+const std = @import("std");
+
+pub fn main() !void {
+    const print = std.debug.print;
+
+    print("Hello, {s}!\n", .{"world"});
+}
+```
+
+- `const std = @import("std");`
+    - `const` keyword declares a _constant_.
+    - `std` is the name of the constant
+    - `@import("std")` 
+        - `@` is the prefixer for ALL [_builtin_ functions](https://ziglang.org/documentation/master/#Builtin-Functions).
+        - `@import` imports a library.
+        - `@import("std")` imports the standard library.
+- `pub fn main() !void`
+    - `pub` defines a _public_ _something_
+    - `fn` defines a function
+    - `main()` the name of the function
+        - For programs, the `main()` will bootstrap the application.
+    - `!void` is a _[Error Union Type](https://ziglang.org/documentation/master/#Error-Union-Type)_
+- `const print = std.debug.print;`
+    - `const` keyword declares a _constant_.
+    - `print` is the name of the constant
+    - `std.debug.print;` is the value of it.
+- `print("Hello, {s}!\n", .{"world"});`
+    - `print()` call the function
+    - `"Hello, {s}!\n"` - the value to be printed
+        - `{s}` - value to be injected
+        - `.{}` - defines a _[tuple](https://en.wikipedia.org/wiki/Tuple)_
