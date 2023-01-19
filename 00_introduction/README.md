@@ -10,6 +10,9 @@
     - [Linux](#linux)
         - [ASDF](#asdf)
 4. [Hello World](#hello-world)
+    - [Code](#code)
+    - [Running it](#running-it)
+    - [Explanation](#explanation)
 
 ## What is Zig101
 Zig101 is my documented journey studying the [Zig Language](https://ziglang.org/) as if I was explaining to someone.
@@ -52,6 +55,8 @@ Incrementally improve your C/C++/Zig codebase.
 ## Hello World
 Let's write a simple _"Hello World"_ program and try to understand what's happening there:
 
+### Code
+
 ```zig
 const std = @import("std");
 
@@ -61,6 +66,15 @@ pub fn main() !void {
     print("Hello, {s}!\n", .{"world"});
 }
 ```
+
+### Running it
+- Create a file e.g `hello_world.zig`
+- Paste the code above inside of it, and then:
+- > $ zig run hello_world.zig
+- The output should be:
+    - _Hello, world!_
+
+### Explanation
 
 - `const std = @import("std");`
     - `const` keyword declares a _constant_.
