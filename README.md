@@ -3,6 +3,7 @@ Zig101 is my documented journey studying the [Zig Language](https://ziglang.org/
 
 ## Summary
 1. [Introduction](./00_introduction/README.md)
+2. [Values and Types](./01_values_and_types/README.md)
 
 ## TODO:
 - [ ] Guides:
