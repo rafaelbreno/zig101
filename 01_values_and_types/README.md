@@ -21,6 +21,9 @@
         - [Packed Struct](#packed-struct)
         - [Struct Methods](#struct-methods)
     - [Enum](#enum)
+        - [Enum Template](#enum-template)
+        - [Typed Enum](#typed-enum)
+        - [Enum Methods](#enum-methods)
     - [Union](#union)
 
 ## Primitive Types
@@ -178,4 +181,40 @@ var fooInstance = Foo.init(1234, "Hello, World!");
 ```
 
 ### Enum
+Is a named constant.
+
+#### Enum Template
+```zig
+const Status = enum {
+    NotStarted,
+    InDevelopment,
+    Completed,
+    Canceled,
+};
+```
+
+#### Typed Enum
+```zig
+const TypedEnum = enum(u8) {
+    NotStarted = 1,
+    InDevelopment = 2,
+    Completed = 3,
+    Canceled = 4,
+}
+```
+
+#### Enum Methods
+```zig
+const Status = enum {
+    NotStarted,
+    InDevelopment,
+    Completed,
+    Canceled,
+
+    pub fn isCompleted(self: Status) bool {
+        return self == Status.Completed;
+    }
+};
+```
+
 ### Union
