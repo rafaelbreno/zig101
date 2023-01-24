@@ -6,6 +6,8 @@ Zig101 is my documented journey studying the [Zig Language](https://ziglang.org/
 2. [Values and Types](./01_values_and_types/README.md)
 
 ## TODO:
+- [ ] Examples
+    - [ ] Add `example.zig` for each chapter
 - [ ] Guides:
     - [ ] Error Handling
     - [ ] Async
@@ -14,3 +16,6 @@ Zig101 is my documented journey studying the [Zig Language](https://ziglang.org/
     - [ ] C interop
 - [ ] Projects
     - [ ] Simple OS - [Guide](https://os.phil-opp.com/)
+    - [ ] Twitch Bot
+    - [ ] 
+    - [ ] 
