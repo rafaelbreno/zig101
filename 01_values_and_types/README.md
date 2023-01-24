@@ -24,7 +24,6 @@
         - [Enum Template](#enum-template)
         - [Typed Enum](#typed-enum)
         - [Enum Methods](#enum-methods)
-    - [Union](#union)
 
 ## Primitive Types
 _"[...][primitive data types](https://en.wikipedia.org/wiki/Primitive_data_type) are a set of basic data types from which all other data types are constructed.[...]"_
@@ -216,5 +215,3 @@ const Status = enum {
     }
 };
 ```
-
-### Union
