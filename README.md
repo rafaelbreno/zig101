@@ -12,3 +12,5 @@ Zig101 is my documented journey studying the [Zig Language](https://ziglang.org/
     - [ ] Memory alloc
     - [ ] Types
     - [ ] C interop
+- [ ] Projects
+    - [ ] Simple OS - [Guide](https://os.phil-opp.com/)
