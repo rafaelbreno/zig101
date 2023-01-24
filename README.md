@@ -8,6 +8,8 @@ Zig101 is my documented journey studying the [Zig Language](https://ziglang.org/
 ## TODO:
 - [ ] Examples
     - [ ] Add `example.zig` for each chapter
+- [ ] Chapters
+    - [ ] Generics
 - [ ] Guides:
     - [ ] Error Handling
     - [ ] Async
