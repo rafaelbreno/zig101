@@ -9,11 +9,10 @@ fn add(n1: i32, n2: i32) i32 {
 const Point = struct {
     x: f64,
     y: f64,
+    fn abs(self: Point) f64 {
+        return math.sqrt((self.x * self.x) + (self.y * self.y));
+    }
 };
-
-fn abs(p: Point) f64 {
-    return math.sqrt((p.x * p.x) + (p.y * p.y));
-}
 
 pub fn main() !void {
     print("Function Add(n1, n2)\n", .{});
@@ -28,6 +27,6 @@ pub fn main() !void {
         .y = 2,
     };
     {
-        print("\tAbs(Point 2, 2) = {}\n", .{abs(p)});
+        print("\tAbs(Point 2, 2) = {}\n", .{p.abs()});
     }
 }
