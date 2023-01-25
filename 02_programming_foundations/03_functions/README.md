@@ -24,4 +24,16 @@ From [Pass-by-value Parameters](https://ziglang.org/documentation/master/#Pass-b
 - _"Primitive types such as Integers and Floats passed as parameters are copied [...] Copying a primitive type is **essentially free** and typically involves nothing more than setting a register.[...]"_
 - _"[...]Structs, unions, and arrays can sometimes be more efficiently passed as a reference, since a copy could be arbitrarily expensive depending on the size. [...] Zig may choose to copy and pass by value, or pass by reference [...] by the fact that parameters are immutable. [...]"_
 ```zig
+const Point = struct {
+    x: f64,
+    y: f64,
+    fn abs(self: Point) f64 {
+        return math.sqrt((self.x * self.x) + (self.y * self.y));
+    }
+};
+var p = Point{
+    .x = 2,
+    .y = 2,
+};
+print("\tAbs(Point 2, 2) = {}\n", .{p.abs()});
 ```
