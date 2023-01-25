@@ -27,6 +27,6 @@ pub fn main() !void {
         .y = 2,
     };
     {
-        print("\tAbs(Point 2, 2) = {}\n", .{p.abs()});
+        print("\tAbs{{Point 2, 2}} = {d:.3}\n", .{p.abs()});
     }
 }
