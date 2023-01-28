@@ -13,7 +13,8 @@
                 - [Static](#static)
                 - [Dynamic](#dynamic)
         - [Data Buffer](#data-buffer)
-2. [Allocators](#allocators)
+2. [Pointers](#pointers)
+3. [Allocators](#allocators)
     - [Use Cases](#use-cases)
     - [Where are the bytes](#where-are-the-bytes)
     - [Lifetime and Ownership](#lifetime-and-ownership)
@@ -120,6 +121,9 @@ fn concat(allocator: Allocator, a: []const u8, b: []const u8) ![]u8 {
 ```
 [buffer.zig](./buffer.zig)
 
+## Pointers
+
+
 ## Allocators
 
 ### Use Cases
@@ -187,6 +191,7 @@ Is the period of a variable has a valid memory.
 [**(WIP)**Example: lifetime.zig](./lifetime.zig)
 
 #### Ownership
+**TODO**
 
 ### Writing an Allocator
 
