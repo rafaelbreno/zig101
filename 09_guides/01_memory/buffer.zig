@@ -18,9 +18,9 @@ pub fn main() !void {
     // comparando o tamanho
     // string = []char = []byte = []u8
     if (std.mem.eql(u8, "foobar", result)) {
-        print("Both are equal", .{});
+        print("Both are equal\n", .{});
     } else {
-        print("Different values", .{});
+        print("Different values\n", .{});
     }
 }
 
