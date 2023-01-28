@@ -3,6 +3,7 @@
 ## Summary
 1. [Template](#template)
 2. [Pass by Value](#pass-by-value)
+3. [Recursion](#recursion)
 
 ## Template
 ```zig
@@ -36,4 +37,15 @@ var p = Point{
     .y = 2,
 };
 print("\tAbs(Point 2, 2) = {}\n", .{p.abs()});
+```
+
+## Recursion
+Read more about at [Recursion Status(from 0.3 update)](https://ziglang.org/download/0.3.0/release-notes.html#recursion)
+```zig
+fn fib(n: u64) u64 {
+    if (n < 2) {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
+}
 ```
