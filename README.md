@@ -14,6 +14,7 @@ Zig101 is my documented journey studying the [Zig Language](https://ziglang.org/
 - [ ] Chapters
     - [ ] Generics
     - [ ] Memory
+    - [ ] Interface
 - [ ] Guides:
     - [ ] Memory alloc
     - [ ] Error Handling
