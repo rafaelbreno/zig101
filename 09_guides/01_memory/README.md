@@ -184,6 +184,7 @@ pub fn main() !void {
 
 #### Lifetime
 Is the period of a variable has a valid memory.
+[**(WIP)**Example: lifetime.zig](./lifetime.zig)
 
 #### Ownership
 
