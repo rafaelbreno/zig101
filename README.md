@@ -26,4 +26,4 @@ Zig101 is my documented journey studying the [Zig Language](https://ziglang.org/
     - [ ] Simple OS - [Guide](https://os.phil-opp.com/)
     - [ ] Twitch Bot
     - [ ] AWS Lambda Implementation
-    - [ ]
+    - [ ] Garbage Collector
