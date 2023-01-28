@@ -13,6 +13,10 @@
                 - [Static](#static)
                 - [Dynamic](#dynamic)
         - [Data Buffer](#data-buffer)
+2. [Allocators](#allocators)
+    - [Use Cases](#use-cases)
+    - [Where are the bytes](#where-are-the-bytes)
+    - [Writing an Allocator](#writing-an-allocator)
 9. [Refererences](#references)
 
 ## Introduction
@@ -112,6 +116,69 @@ fn concat(allocator: Allocator, a: []const u8, b: []const u8) ![]u8 {
 }
 ```
 [buffer.zig](./buffer.zig)
+
+## Allocators
+
+### Use Cases
+1. _General Purpose:_
+    - Use `GeneralPurposeAllocator` from `std.heap.GeneralPurposeAllocator`
+2. _Library:_
+    - Use `Allocator`(an interface) from `std.mem.Allocator`
+    - Allows the developer
+3. _Linking `libc`:_
+    - Use `c_allocator` from `std.heap.c_allocator`
+    - Allows you to use a Zig's allocator when Interoping with C.
+4. _Comptime size:_
+    - Can be used:
+        - `FixedBufferAllocator` from `std.heap.FixedBufferAllocator`
+        - `ThreadSafeFixedBufferAllocator` from `std.heap.ThreadSafeFixedBufferAllocator` for thread safety.
+5. _Infinite Loop:_
+    - e.g: game dev, webserver, CLI, etc.(any non cyclical pattern)
+    - Use `ArenaAllocator` from `std.heap.ArenaAllocator`
+6. _Test:_
+    - Use `allocator` from `std.testing.allocator`
+7. _Failing Tests:_
+    - Use `FailingAllocator` from `std.testing.FailingAllocator`
+
+If none of the cases match your use case, you can write [your own allocator](#writing-an-allocator)
+
+### Where are the bytes
+```zig
+// constant - value known at compile time
+// stored at global constant data section.
+const foo = "value_one";
+
+// var declared at the top level is
+// stored at global data section.
+var bar = "value_two";
+
+const Baz = struct {
+    // var declared in struct is
+    // stored at global data section.
+    var field = "value_three";
+};
+
+fn getLen(s: []type) !u32 {
+    // variables declared inside functions
+    // are stored in the function's stack frame.
+    var qux = "value_four";
+    _ = qux;
+
+    // Once a function returns, any Pointers to variables
+    // inside of it will become invalid references.
+    return s.len;
+}
+
+pub fn main() !void {
+    // constant - value known at compile time
+    // stored at global constant data section.
+    const fred = "value_four";
+    _ = fred;
+}
+```
+
+
+### Writing an Allocator
 
 ## Refererences
 - [Illinois Edu](https://courses.engr.illinois.edu/cs225/fa2022/resources/stack-heap/)
