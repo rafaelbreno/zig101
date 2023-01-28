@@ -16,6 +16,9 @@
 2. [Allocators](#allocators)
     - [Use Cases](#use-cases)
     - [Where are the bytes](#where-are-the-bytes)
+    - [Lifetime and Ownership](#lifetime-and-ownership)
+        - [Lifetime](#lifetime)
+        - [Ownership](#ownership)
     - [Writing an Allocator](#writing-an-allocator)
 9. [Refererences](#references)
 
@@ -177,6 +180,12 @@ pub fn main() !void {
 }
 ```
 
+### Lifetime and Ownership
+
+#### Lifetime
+Is the period of a variable has a valid memory.
+
+#### Ownership
 
 ### Writing an Allocator
 
